@@ -6,6 +6,9 @@
 5. Filebeat Sidecar Container zu Apache
 6. Kibana Container
 
+0. Docker Machine (z.B auf Windows und Mac)
+Wenn keine native Möglichkeit besteht, Docker zu betreiben kommt die Docker-Machine zum Einsatz. Es ist eine virtuelle Maschine, welche den Kernel und die Docker Software bereitstellt. `docker-machine ip`
+
 1. Apache 2.2 in einem Container
 ```
 cd apache22
