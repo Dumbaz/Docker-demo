@@ -23,7 +23,22 @@ docker run -dit --name apache22-1 -p 8080:80 apache22
 Problem: Docker Container sind flüchtig. Sie enthalten nur 1 Prozess, bei Beendigung desselben ist der Container auch nicht mehr vorhanden.
 ```
 docker volume create --name ApacheData
+docker run -ti --rm -v ApacheData:/apacheData centos
+# Volume ApacheData wird gemounted nach /apacheData
+```
+
+```
+# Im Container:
+echo "Hallo, Welt" > /apacheData/test.txt
+cat /apacheData/test.txt
+exit
+```
+
+# Außerhalb des Containers
+```
 docker volume inspect ApacheData
+docker run -ti --rm -v ApacheData:/apacheData centos
+cat /apacheData/test.txt
 ```
 
 3. Apache 2.2 und 2.4 im Parallelbetrieb
