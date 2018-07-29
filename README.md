@@ -20,8 +20,10 @@ docker run -dit --name apache22-1 -p 8080:80 apache22
 ```
 
 2. Volumes / Mounts
+Problem: Docker Container sind flüchtig. Sie enthalten nur 1 Prozess, bei Beendigung desselben ist der Container auch nicht mehr vorhanden.
 ```
 docker volume create --name ApacheData
+docker volume inspect ApacheData
 ```
 
 3. Apache 2.2 und 2.4 im Parallelbetrieb
