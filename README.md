@@ -19,4 +19,14 @@ docker run -dit --name apache22-1 -p 8080:80 apache22
 #   Forwarde den Port 80 des Containers auf localhost:8080
 ```
 
+2. Volumes / Mounts
+```
+docker volume create --name ApacheData
+```
 
+3. Apache 2.2 und 2.4 im Parallelbetrieb
+```
+cd apache24
+docker build -t apache24 .
+docker image ls
+```
